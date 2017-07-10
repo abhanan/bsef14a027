@@ -1,0 +1,23 @@
+﻿@model IEnumerable<DataAccess.Item>
+@{
+    ViewBag.Title = "ShowFoodItems";
+}
+
+<h2>Food Items</h2>
+<table cellpadding="100" cellspacing="100">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+    </tr>
+    @foreach (var  item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.itemName)</td>
+            <td>@Html.DisplayFor(modelItem => item.Description)</td>
+            <td>@Html.DisplayFor(modelItem => item.Price)</td>
+            <td><input type="number" min="1" max="10" placeholder="Enter Quantity"/></td>
+            <td class="btn btn-primary">Add to cart</td>
+        </tr>
+    }
+</table>
